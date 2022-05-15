@@ -14,6 +14,34 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface MyComponent {
+        /**
+          * The first name
+         */
+        "first": string;
+        /**
+          * The last name
+         */
+        "last": string;
+        /**
+          * The middle name
+         */
+        "middle": string;
+    }
+    interface UiButton {
+        "appearance": string;
+        "label": string;
+        "type": string;
+    }
+    interface UiCard {
+        "imageBack": string;
+        "imageFront": string;
+    }
+    interface UiInput {
+        "active": string;
+        "type": string;
+        "value": string;
+    }
 }
 declare global {
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
@@ -34,10 +62,38 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    }
+    var HTMLMyComponentElement: {
+        prototype: HTMLMyComponentElement;
+        new (): HTMLMyComponentElement;
+    };
+    interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
+    }
+    var HTMLUiButtonElement: {
+        prototype: HTMLUiButtonElement;
+        new (): HTMLUiButtonElement;
+    };
+    interface HTMLUiCardElement extends Components.UiCard, HTMLStencilElement {
+    }
+    var HTMLUiCardElement: {
+        prototype: HTMLUiCardElement;
+        new (): HTMLUiCardElement;
+    };
+    interface HTMLUiInputElement extends Components.UiInput, HTMLStencilElement {
+    }
+    var HTMLUiInputElement: {
+        prototype: HTMLUiInputElement;
+        new (): HTMLUiInputElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "my-component": HTMLMyComponentElement;
+        "ui-button": HTMLUiButtonElement;
+        "ui-card": HTMLUiCardElement;
+        "ui-input": HTMLUiInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -48,10 +104,42 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface MyComponent {
+        /**
+          * The first name
+         */
+        "first"?: string;
+        /**
+          * The last name
+         */
+        "last"?: string;
+        /**
+          * The middle name
+         */
+        "middle"?: string;
+    }
+    interface UiButton {
+        "appearance"?: string;
+        "label"?: string;
+        "type"?: string;
+    }
+    interface UiCard {
+        "imageBack"?: string;
+        "imageFront"?: string;
+    }
+    interface UiInput {
+        "active"?: string;
+        "type"?: string;
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
+        "my-component": MyComponent;
+        "ui-button": UiButton;
+        "ui-card": UiCard;
+        "ui-input": UiInput;
     }
 }
 export { LocalJSX as JSX };
@@ -61,6 +149,10 @@ declare module "@stencil/core" {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
+            "ui-card": LocalJSX.UiCard & JSXBase.HTMLAttributes<HTMLUiCardElement>;
+            "ui-input": LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
         }
     }
 }
