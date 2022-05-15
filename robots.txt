@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://alicemenzie.github.io/stenciljs-example-app/sitemap.xml
